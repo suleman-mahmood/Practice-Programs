@@ -6,18 +6,18 @@
     End Structure
 
     Sub Main()
-        'Adding Records iN a new File "sturec"
+        ''''''''''''''Adding Records iN a new File "sturec" ''''''''''''''
         'Call AddingRecordsInFile()
         'Displaying 3 Records from the file "sturec"
         'Call DisplayRecordsFromFile("sturec", 3)
 
-        'Searching for Record in File 
+        '''''''''''''''Searching for Record in File'''''''''''''' 
         'Dim sRollNo As Integer
         'Console.WriteLine("Enter the Roll No: ")
         'sRollNo = Console.ReadLine
         'Call SearchRecordInFile(sRollNo)
 
-        'Deleting Record from File
+        '''''''''''''''Deleting Record from File''''''''''''''
         'Dim dRollNo As Integer
         'Console.WriteLine("Enter the Roll No: ")
         'dRollNo = Console.ReadLine
