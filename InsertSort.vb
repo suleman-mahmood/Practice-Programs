@@ -6,7 +6,7 @@
 
         randomNumber = New Random
 
-        'We are filling  the array with random Values
+        'Filling up the array with random values between 1 and 100
         For i = 0 To 99
             numbers(i) = (randomNumber.Next() Mod 100) + 1
         Next
