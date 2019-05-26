@@ -41,9 +41,13 @@
 
             hasSwapped = False
 
+            'We are looping from first to the second last index (because we need to compare i with i + 1
             For i = 0 To (sizeOfArray - 2)
+                'If previous value is greater then the next one then we Swap
                 If numbers(i) > numbers(i + 1) Then
+                    'Setting the flag to true so that We loop again
                     hasSwapped = True
+
                     temp = numbers(i)
                     numbers(i) = numbers(i + 1)
                     numbers(i + 1) = temp
