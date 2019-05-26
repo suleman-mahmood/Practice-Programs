@@ -1,7 +1,7 @@
 ﻿Module Module1
 
     Sub Main()
-        Dim numbers(100) As Integer
+        Dim numbers(99) As Integer
         Dim randomNumber As Random
 
         randomNumber = New Random
@@ -19,7 +19,7 @@
 
         'Calling the insert sort Procedure by passing my array as
         'a reference so that it comes back sorted
-        Call InsertSort(numbers, 100)
+        Call AlternateInsertSort(numbers, 100)
 
         'Lets output the elements of the array
         Console.WriteLine("After Sorting:")
@@ -54,6 +54,34 @@
                     Exit For
                 End If
             Next
+        Next
+    End Sub
+
+    Sub AlternateInsertSort(ByRef numbers() As Integer, ByVal sizeOfArray As Integer)
+        'This variable will hold the item to be inserted
+        Dim temp As Integer
+        'It will be used to loop the array backwards from (i - 1)th location to starting index (0)
+        Dim currentIndex As Integer
+
+        'We will loop from 2nd element to the last
+        For i = 1 To sizeOfArray
+            'We will save the item to be inserted into Temp
+            temp = numbers(i)
+            'We will use this variable to loop backwards
+            currentIndex = i - 1
+
+            'We will be looping from i-1 location to 0 and moving values forward when our insert
+            'value is less than the one before it
+            While (currentIndex >= 0) And (temp < numbers(currentIndex))
+                numbers(currentIndex + 1) = numbers(currentIndex)
+                currentIndex = currentIndex - 1
+            End While
+
+            'We will finally insert our value at currentIndex.
+            'Since we decremented currentIndex in Loop, we will increment CurrentIndex
+            'to show its original last value
+            numbers(currentIndex + 1) = temp
+
         Next
     End Sub
 
