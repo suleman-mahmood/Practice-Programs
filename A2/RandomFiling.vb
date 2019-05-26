@@ -44,6 +44,7 @@
         Dim hasSwapped As Boolean
         Dim swapper As rec
 
+        hasSwapped = True
         FileOpen(1, "SortItems", OpenMode.Random, OpenAccess.ReadWrite, , Len(record))
 
         totalRecs = LOF(1) / Len(record)
@@ -67,7 +68,7 @@
         End While
 
         For k = 0 To (totalRecs - 1)
-            FilePut(1, recordsArray(k), k)
+            FilePut(1, recordsArray(k), k + 1)
         Next
 
         FileClose(1)
