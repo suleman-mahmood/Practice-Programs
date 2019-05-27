@@ -23,11 +23,11 @@
             Else
                 Dim count As Integer
                 count = index
-                'We will use bucketing and find the next free location after our index
+                'We will use open Hashing and find the next free location after our index
                 While numbers(count) <> NULLVALUE
                     count = count + 1
                     'If we are at end of array then we loop back to the start to find free location
-                    If count >= 9 Then
+                    If count > 9 Then
                         count = 0
                     End If
                 End While
@@ -43,17 +43,7 @@
     End Sub
 
     Function calculateHash(ByVal value As Integer) As Integer
-        Dim tempStr As String
-        Dim sum As Integer
-        tempStr = value.ToString()
-
-        For i = 1 To Len(tempStr)
-            sum = sum + Convert.ToUInt32(Mid(tempStr, i, 1))
-        Next
-
-        sum = (sum Mod 9) + 1
-
-        Return sum
+        Return value Mod 10
     End Function
 
 End Module
